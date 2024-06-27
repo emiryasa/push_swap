@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaykin <kaykin@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: eyasa <eyasa@student.42istanbul.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 17:57:55 by kaykin            #+#    #+#             */
-/*   Updated: 2024/06/03 17:57:57 by kaykin           ###   ########.fr       */
+/*   Created: 2024/06/27 14:52:08 by eyasa             #+#    #+#             */
+/*   Updated: 2024/06/27 19:37:13 by eyasa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void check_args_is_number(t_stacks *stacks)
         while (args[i][j])
         {
             if (!(args[i][j] >= '0' && args[i][j] <= '9'))
-                put_error_and_free(stacks);
+                exit_error(stacks);
             j++;
         }
         i++;
@@ -57,7 +57,7 @@ static void check_is_int(t_stacks *stacks)
     while (args[i])
     {
         if (ft_atol(args[i]) > INTMAX || ft_atol(args[i]) < INTMIN)
-            put_error_and_free(stacks);
+            exit_error(stacks);
         i++;
     }
 }
@@ -76,7 +76,7 @@ static void check_args_is_duplicate(t_stacks *stacks)
         while (args[j])
         {
             if (ft_atoi(args[j]) == ft_atoi(args[i]))
-                put_error_and_free(stacks);
+                exit_error(stacks);
             j++;
         }
         i++;

@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyasa <eyasa@student.42istanbul.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/27 14:51:59 by eyasa             #+#    #+#             */
+/*   Updated: 2024/06/27 19:54:52 by eyasa            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
+static char *convert_to_one_str(int ac, char **av);
 
 static char **parse_args(int ac, char **av, t_stacks *stacks)
 {
@@ -53,7 +65,7 @@ static void add_stack(t_stacks *stacks)
     {
         num = (int *)malloc(sizeof(int));
         if (num == NULL)
-            put_error_and_free(stacks);
+            exit_error(stacks);
         *num = ft_atoi(args[i]);
         free(args[i++]);
         ft_lstadd_back(&stacks->stack_a, ft_lstnew(num));
@@ -72,4 +84,7 @@ int main(int ac, char **av)
     stacks->args = parse_args(ac, av, stacks);
     check_args(stacks);
     add_stack(stacks);
+	action_optimise(stacks);
+	free_stack(stacks->stack_a);
+	free(stacks);
 }
