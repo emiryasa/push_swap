@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_functions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eyasa <eyasa@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eyasa <eyasa@student.42istanbul.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 20:55:28 by eyasa             #+#    #+#             */
-/*   Updated: 2023/12/28 16:49:29 by eyasa            ###   ########.fr       */
+/*   Updated: 2024/06/27 20:02:55 by eyasa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-	int i;
-	int counter;
+	int	i;
+	int	counter;
 
 	i = 0;
 	counter = 0;
@@ -39,9 +39,9 @@ int ft_putstr(char *str)
 	return (counter);
 }
 
-int ft_nbase(long long nbr, const char *str, int base)
+int	ft_nbase(long long nbr, const char *str, int base)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (nbr < 0)
@@ -58,10 +58,10 @@ int ft_nbase(long long nbr, const char *str, int base)
 	return (counter);
 }
 
-int ft_ptr(void *ptr)
+int	ft_ptr(void *ptr)
 {
-	int counter;
-	unsigned long long nbr;
+	int					counter;
+	unsigned long long	nbr;
 
 	counter = 0;
 	nbr = (unsigned long long)ptr;

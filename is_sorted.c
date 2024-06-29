@@ -6,7 +6,7 @@
 /*   By: eyasa <eyasa@student.42istanbul.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:49:49 by eyasa             #+#    #+#             */
-/*   Updated: 2024/06/27 18:55:39 by eyasa            ###   ########.fr       */
+/*   Updated: 2024/06/27 20:02:08 by eyasa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	is_sort(t_list *stack)
 	return (1);
 }
 
-int is_reverse_sort(t_list *stack)
+int	is_reverse_sort(t_list *stack)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	if (!stack)
 		return (0);
